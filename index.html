@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#111827" />
+  <title>Momentum — Daily Micro Wins</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#141b2d;--panel2:#1a2338;--text:#f7f8fb;--muted:#a9b2c7;--accent:#7c5cff;--accent2:#22d3a6;--danger:#ff6b7a;--shadow:0 18px 50px rgba(0,0,0,.28);--radius:24px}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at top left,rgba(124,92,255,.22),transparent 32%),radial-gradient(circle at bottom right,rgba(34,211,166,.14),transparent 28%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;justify-content:center}
+    button,input{font:inherit}.app{width:min(100%,460px);min-height:100vh;padding:22px 18px 100px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.brand h1{font-size:28px;margin:0;letter-spacing:-.8px}.brand p{margin:4px 0 0;color:var(--muted);font-size:13px}.avatar{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#4f46e5);font-weight:800;box-shadow:var(--shadow);cursor:pointer}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat{background:rgba(20,27,45,.92);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:13px 10px;text-align:center}.stat strong{display:block;font-size:18px}.stat span{color:var(--muted);font-size:12px}.card{background:linear-gradient(180deg,rgba(26,35,56,.98),rgba(20,27,45,.98));border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}.challenge{padding:22px;position:relative}.challenge::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}.eyebrow{color:var(--accent2);text-transform:uppercase;letter-spacing:1.4px;font-size:11px;font-weight:800;margin-bottom:10px}.challenge h2{margin:0 0 10px;font-size:27px;line-height:1.12;letter-spacing:-.7px}.challenge p{color:var(--muted);margin:0 0 18px;line-height:1.5}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.06);color:#dbe1ef;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:700}.primary,.secondary,.danger{width:100%;border-radius:16px;padding:14px 16px;font-weight:800;cursor:pointer}.primary{border:0;color:#fff;background:linear-gradient(135deg,var(--accent),#5b45d8);box-shadow:0 10px 24px rgba(124,92,255,.25)}.primary:disabled{opacity:.58;cursor:not-allowed;background:#394158;box-shadow:none}.secondary{margin-top:10px;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--text)}.danger{margin-top:10px;border:1px solid rgba(255,107,122,.25);background:rgba(255,107,122,.1);color:#ffb1ba}.progress-wrap{padding:18px 20px 20px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.section-head h3{margin:0;font-size:16px}.section-head span{color:var(--muted);font-size:12px}.bar{height:11px;background:#0e1424;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}.bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit;transition:width .45s ease}.level-line{margin-top:10px;color:var(--muted);font-size:12px}.rewards-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px 18px}.reward{background:var(--panel2);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:14px;min-height:102px}.reward.locked{opacity:.5;filter:saturate(.35)}.reward-icon{font-size:25px}.reward strong{display:block;margin-top:7px;font-size:14px}.reward small{color:var(--muted);display:block;margin-top:4px;line-height:1.35}.section-title{padding:18px 18px 10px;margin:0;font-size:17px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,460px);background:rgba(11,16,32,.94);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:repeat(3,1fr);padding:10px 16px max(10px,env(safe-area-inset-bottom))}.nav-btn{border:0;background:transparent;color:var(--muted);padding:8px 4px;cursor:pointer;font-size:12px;font-weight:700}.nav-btn.active{color:white}.nav-btn b{display:block;font-size:20px;margin-bottom:2px}.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#f7f8fb;color:#111827;padding:12px 16px;border-radius:999px;font-weight:800;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:30;box-shadow:var(--shadow)}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.modal{position:fixed;inset:0;background:rgba(3,6,14,.78);display:none;align-items:flex-end;justify-content:center;padding:16px;z-index:20}.modal.show{display:flex}.sheet{width:min(100%,460px);background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:28px 28px 20px 20px;padding:24px;box-shadow:var(--shadow)}.sheet h3{margin:0 0 8px;font-size:25px}.sheet p{color:var(--muted);line-height:1.5}.close{border:0;background:transparent;color:var(--muted);float:right;font-size:20px;cursor:pointer}.field{margin-top:12px}.field label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px}.field input{width:100%;background:#0e1424;color:var(--text);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:13px 14px;outline:none}.field input:focus{border-color:var(--accent)}.auth-switch{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}.auth-switch button{border:0;background:transparent;color:#b9aaff;font-weight:800;cursor:pointer}.account-box{background:#0e1424;border-radius:16px;padding:14px;margin:16px 0;color:var(--muted);font-size:13px;word-break:break-word}.sync{font-size:11px;color:var(--accent2);margin-top:4px}.hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><h1>Momentum</h1><p>One small win every day.</p><div class="sync" id="syncStatus">Sign in to save progress</div></div>
+      <div class="avatar" id="avatar" title="Account">R</div>
+    </header>
+    <section class="stats"><div class="stat"><strong id="streak">0</strong><span>day streak 🔥</span></div><div class="stat"><strong id="xp">0</strong><span>total XP</span></div><div class="stat"><strong id="level">1</strong><span>level</span></div></section>
+    <section class="card challenge">
+      <div class="eyebrow">Today's micro challenge</div><h2 id="challengeTitle"></h2><p id="challengeText"></p>
+      <div class="meta"><span class="pill" id="category"></span><span class="pill">⏱ 2 minutes</span><span class="pill">+20 XP</span></div>
+      <button class="primary" id="completeBtn">Complete today’s challenge</button><button class="secondary" id="newChallengeBtn">Give me another challenge</button>
+    </section>
+    <section class="card progress-wrap"><div class="section-head"><h3 id="rankName">Beginner</h3><span id="xpLabel">0 / 100 XP</span></div><div class="bar"><div class="bar-fill" id="progressBar"></div></div><div class="level-line" id="nextUnlock"></div></section>
+    <section class="card"><h3 class="section-title">Unlockable rewards</h3><div class="rewards-grid" id="rewardsGrid"></div></section>
+  </main>
+  <nav class="bottom-nav"><button class="nav-btn active"><b>⌂</b>Today</button><button class="nav-btn" id="shareNav"><b>↗</b>Share</button><button class="nav-btn" id="accountNav"><b>👤</b>Account</button></nav>
+  <div class="toast" id="toast"></div>
+
+  <div class="modal" id="authModal"><div class="sheet"><button class="close" data-close="authModal">✕</button>
+    <div id="signedOutView">
+      <h3 id="authTitle">Welcome back</h3><p id="authSubtitle">Sign in to sync your XP and streak across devices.</p>
+      <form id="authForm">
+        <div class="field hidden" id="nameField"><label for="displayName">Name</label><input id="displayName" autocomplete="name" placeholder="Raysean" /></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required placeholder="you@example.com" /></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="At least 6 characters" /></div>
+        <button class="primary" id="authSubmit" type="submit">Sign in</button>
+      </form>
+      <div class="auth-switch"><span id="switchText">New to Momentum?</span><button id="switchMode" type="button">Create account</button></div>
+    </div>
+    <div id="signedInView" class="hidden"><h3>Your account</h3><p>Your progress is saved securely to Firebase.</p><div class="account-box" id="accountInfo"></div><button class="primary" data-close="authModal">Keep building momentum</button><button class="danger" id="logoutBtn">Log out</button></div>
+  </div></div>
+
+  <div class="modal" id="shareModal"><div class="sheet"><button class="close" data-close="shareModal">✕</button><h3>Share your momentum</h3><p>Celebrate your progress without exposing private details.</p><div class="account-box"><strong id="shareStreak">0 DAY STREAK</strong><p id="shareMessage"></p></div><button class="primary" id="shareBtn">Share achievement</button></div></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+    const firebaseConfig={apiKey:"AIzaSyDCatS8eJVmrl7SHn4Zlc7pov_yXXglfn4",authDomain:"momentum-b9d1d.firebaseapp.com",projectId:"momentum-b9d1d",storageBucket:"momentum-b9d1d.firebasestorage.app",messagingSenderId:"370520026216",appId:"1:370520026216:web:81ae7156366fc7c7061fdd"};
+    const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
+
+    const challenges=[
+      {title:"Write down one idea",text:"Capture one idea for a project, business, song, video, or personal goal. It does not need to be perfect.",category:"Creativity"},
+      {title:"Read one page",text:"Read one full page of any book, article, lesson, or guide that moves you forward.",category:"Learning"},
+      {title:"Move for two minutes",text:"Stretch, walk, dance, or do a few bodyweight movements for two minutes.",category:"Fitness"},
+      {title:"Clear one small space",text:"Clean one desk corner, drawer, shelf, or section of your room.",category:"Reset"},
+      {title:"Write one sentence about your future",text:"Describe one detail of the life you are building, then write one tiny action connected to it.",category:"Vision"},
+      {title:"Send one encouraging message",text:"Reach out to someone with a genuine compliment, thank-you, or check-in.",category:"Kindness"},
+      {title:"Learn one new term",text:"Pick one word from business, music, technology, or life and write its meaning.",category:"Learning"},
+      {title:"Take five slow breaths",text:"Pause and take five calm breaths. Let your shoulders relax before continuing your day.",category:"Mindfulness"}
+    ];
+    const rewards=[{level:1,icon:"✨",name:"Starter Badge",desc:"Unlocked for beginning."},{level:2,icon:"🎯",name:"Focus Theme",desc:"Unlock at Level 2."},{level:3,icon:"🛡️",name:"Streak Shield",desc:"Protect one missed day."},{level:4,icon:"🌌",name:"Night Theme",desc:"A premium-style visual reward."},{level:5,icon:"🏆",name:"Builder Badge",desc:"Proof of consistent progress."},{level:7,icon:"👑",name:"Momentum Crown",desc:"A rare profile collectible."}];
+    const ranks=["Beginner","Explorer","Builder","Creator","Expert","Legend"], storageKey="momentumAppStateV2";
+    const defaultState={xp:0,streak:0,level:1,completedToday:false,lastCompleted:null,challengeIndex:0};
+    let state={...defaultState}, currentUser=null, authMode="signin", saveTimer;
+
+    const $=id=>document.getElementById(id);
+    const localDateString=(date=new Date())=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+    const previousDateString=()=>{const d=new Date();d.setDate(d.getDate()-1);return localDateString(d)};
+    const calculateLevel=xp=>Math.floor(xp/100)+1;
+    const sanitizeState=data=>({xp:Number(data?.xp)||0,streak:Number(data?.streak)||0,level:Number(data?.level)||1,completedToday:Boolean(data?.completedToday),lastCompleted:data?.lastCompleted||null,challengeIndex:Number(data?.challengeIndex)||0});
+
+    function showToast(message){$("toast").textContent=message;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2200)}
+    function refreshDailyState(){if(state.lastCompleted!==localDateString())state.completedToday=false}
+    function saveLocal(){localStorage.setItem(storageKey,JSON.stringify(state))}
+    async function saveCloud(){
+      saveLocal();
+      if(!currentUser)return;
+      $("syncStatus").textContent="Saving…";
+      try{
+        await setDoc(doc(db,"users",currentUser.uid),{...state,email:currentUser.email,displayName:currentUser.displayName||"",updatedAt:serverTimestamp()},{merge:true});
+        $("syncStatus").textContent="Progress synced ✓";
+      }catch(e){console.error(e);$("syncStatus").textContent="Sync failed";showToast("Could not sync progress")}
+    }
+    function queueSave(){clearTimeout(saveTimer);saveTimer=setTimeout(saveCloud,350)}
+    function renderRewards(){$("rewardsGrid").innerHTML=rewards.map(r=>`<div class="reward ${state.level<r.level?"locked":""}"><div class="reward-icon">${state.level>=r.level?r.icon:"🔒"}</div><strong>${r.name}</strong><small>${state.level>=r.level?"Unlocked":r.desc}</small></div>`).join("")}
+    function render(){
+      refreshDailyState();state.level=calculateLevel(state.xp);
+      const c=challenges[state.challengeIndex%challenges.length];
+      $("challengeTitle").textContent=c.title;$("challengeText").textContent=c.text;$("category").textContent=c.category;$("streak").textContent=state.streak;$("xp").textContent=state.xp;$("level").textContent=state.level;
+      const within=state.xp%100;$("progressBar").style.width=within+"%";$("xpLabel").textContent=`${within} / 100 XP`;$("rankName").textContent=ranks[Math.min(state.level-1,ranks.length-1)];$("nextUnlock").textContent=state.level<7?`Next reward unlocks at Level ${state.level+1}`:"All rewards unlocked";
+      $("completeBtn").disabled=state.completedToday;$("completeBtn").textContent=state.completedToday?"Completed for today ✓":"Complete today’s challenge";
+      $("shareStreak").textContent=`${state.streak} DAY STREAK`;$("shareMessage").textContent=state.streak?`I’ve completed ${state.streak} daily micro-win${state.streak===1?"":"s"} in a row.`:"I’m building momentum one small win at a time.";
+      renderRewards();saveLocal();
+    }
+    async function loadUserData(user){
+      $("syncStatus").textContent="Loading progress…";
+      try{
+        const snap=await getDoc(doc(db,"users",user.uid));
+        if(snap.exists()) state=sanitizeState(snap.data());
+        else{
+          const local=localStorage.getItem(storageKey); state=local?sanitizeState(JSON.parse(local)):{...defaultState};
+          await saveCloud();
+        }
+        $("syncStatus").textContent="Progress synced ✓";render();
+      }catch(e){console.error(e);$("syncStatus").textContent="Using device progress";showToast("Cloud load failed");render()}
+    }
+    function updateAccountUI(){
+      if(currentUser){
+        $("signedOutView").classList.add("hidden");$("signedInView").classList.remove("hidden");
+        $("accountInfo").innerHTML=`<strong>${currentUser.displayName||"Momentum member"}</strong><br>${currentUser.email}`;
+        $("avatar").textContent=(currentUser.displayName||currentUser.email||"M").charAt(0).toUpperCase();
+      }else{
+        $("signedOutView").classList.remove("hidden");$("signedInView").classList.add("hidden");$("avatar").textContent="R";$("syncStatus").textContent="Sign in to save progress";
+      }
+    }
+    function setAuthMode(mode){
+      authMode=mode;const signup=mode==="signup";
+      $("authTitle").textContent=signup?"Create your account":"Welcome back";$("authSubtitle").textContent=signup?"Start saving your Momentum progress in the cloud.":"Sign in to sync your XP and streak across devices.";
+      $("authSubmit").textContent=signup?"Create account":"Sign in";$("switchText").textContent=signup?"Already have an account?":"New to Momentum?";$("switchMode").textContent=signup?"Sign in":"Create account";$("nameField").classList.toggle("hidden",!signup);$("password").autocomplete=signup?"new-password":"current-password";
+    }
+    function friendlyError(code){
+      const map={"auth/email-already-in-use":"That email already has an account.","auth/invalid-email":"Enter a valid email address.","auth/invalid-credential":"The email or password is incorrect.","auth/weak-password":"Use a password with at least 6 characters.","auth/too-many-requests":"Too many attempts. Please wait and try again."};
+      return map[code]||"Something went wrong. Please try again.";
+    }
+
+    onAuthStateChanged(auth,async user=>{currentUser=user;updateAccountUI();if(user)await loadUserData(user);else{const local=localStorage.getItem(storageKey);state=local?sanitizeState(JSON.parse(local)):{...defaultState};render()}});
+
+    $("authForm").addEventListener("submit",async e=>{
+      e.preventDefault();const email=$("email").value.trim(),password=$("password").value,name=$("displayName").value.trim();
+      $("authSubmit").disabled=true;
+      try{
+        if(authMode==="signup"){
+          const cred=await createUserWithEmailAndPassword(auth,email,password);
+          if(name)await updateProfile(cred.user,{displayName:name});
+          currentUser=cred.user;updateAccountUI();await saveCloud();showToast("Account created");
+        }else{await signInWithEmailAndPassword(auth,email,password);showToast("Signed in")}
+        $("authModal").classList.remove("show");$("authForm").reset();
+      }catch(err){showToast(friendlyError(err.code))}
+      finally{$("authSubmit").disabled=false}
+    });
+    $("switchMode").addEventListener("click",()=>setAuthMode(authMode==="signin"?"signup":"signin"));
+    $("logoutBtn").addEventListener("click",async()=>{await signOut(auth);$("authModal").classList.remove("show");showToast("Logged out")});
+    $("completeBtn").addEventListener("click",()=>{if(state.completedToday)return;const today=localDateString();state.streak=state.lastCompleted===previousDateString()?state.streak+1:1;state.lastCompleted=today;state.completedToday=true;state.xp+=20;render();queueSave();showToast("Challenge complete. +20 XP")});
+    $("newChallengeBtn").addEventListener("click",()=>{state.challengeIndex=(state.challengeIndex+1)%challenges.length;render();queueSave();showToast("New challenge loaded")});
+    $("shareNav").addEventListener("click",()=>$("shareModal").classList.add("show"));
+    $("accountNav").addEventListener("click",()=>$("authModal").classList.add("show"));
+    $("avatar").addEventListener("click",()=>$("authModal").classList.add("show"));
+    $("shareBtn").addEventListener("click",async()=>{const text=state.streak?`I’m on a ${state.streak}-day Momentum streak and building progress one small win at a time.`:"I’m building momentum one small win at a time.";try{if(navigator.share)await navigator.share({title:"My Momentum Progress",text});else{await navigator.clipboard.writeText(text);showToast("Share text copied")}}catch(e){}});
+    document.querySelectorAll("[data-close]").forEach(btn=>btn.addEventListener("click",()=>$(btn.dataset.close).classList.remove("show")));
+    document.querySelectorAll(".modal").forEach(modal=>modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("show")}));
+    setAuthMode("signin");
+  </script>
+</body>
+</html>
